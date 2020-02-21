@@ -15,6 +15,7 @@ font-style: normal;
 font-weight: bold;
 font-size: 114px;
 line-height: 130px;
+color: ${props => props.color || "#000000"};
 `
 
 const SalimParam = styled.p`
@@ -73,8 +74,20 @@ function App() {
     return (
         <Container className={classes.SalimContainer}>
             <Grid container justify="center">
-                <SalimHeader>
-                    สลิ่ม
+                <SalimHeader color="#A51931">
+                    S
+                </SalimHeader>
+                <SalimHeader color="#F4F5F8">
+                    A
+                </SalimHeader>
+                <SalimHeader color="#2D2A4A">
+                    L
+                </SalimHeader>
+                <SalimHeader color="#F4F5F8">
+                    I
+                </SalimHeader>
+                <SalimHeader color="#A51931">
+                    M
                 </SalimHeader>
             </Grid>
             <form>
@@ -84,7 +97,7 @@ function App() {
                         <TextField className={classes.root} classes={{focused: classes.inputFocus}} variant="outlined"
                                    fullWidth/>
                     </Grid>
-                    <Grid item xs={12} md={1} justify="center" style={{display:"flex"}}>
+                    <Grid item xs={12} md={1} justify="center" style={{display: "flex"}}>
                         <Card className={classes.SendButton}>
                             <IconButton>
                                 <SendIcon fontSize="large" style={{color: "#FF1111"}}></SendIcon>
