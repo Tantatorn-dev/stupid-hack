@@ -23,7 +23,7 @@ font-style: normal;
 font-weight: bold;
 font-size: 36px;
 line-height: 49px;
-color: #7D8DA4;
+color: #4B3B24;
 `
 const useStyles = makeStyles(theme => ({
         root: {
