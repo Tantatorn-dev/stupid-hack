@@ -16,6 +16,14 @@ font-weight: bold;
 font-size: 96px;
 line-height: 130px;
 `
+
+const SalimParam = styled.p`
+font-family: SOV_Tejo;
+font-style: normal;
+font-weight: bold;
+font-size: 36px;
+line-height: 49px;
+`
 const useStyles = makeStyles(theme => ({
         root: {
             '& > *': {
@@ -23,7 +31,7 @@ const useStyles = makeStyles(theme => ({
                 boxShadow: " inset 9px 9px 16px #A3B1C6, inset -9px -9px 16px rgba(255, 255, 255, 0.25)",
                 borderRadius: "10px",
                 border: "none",
-                width: "685px",
+                width: "100%",
                 height: "75px",
 
             },
@@ -42,14 +50,27 @@ const useStyles = makeStyles(theme => ({
             borderColor: '#80bdff',
             boxShadow: '0 0 0 0.2rem rgba(0,123,255,.25)',
             backgroundColor: "#00FF00",
+        },
+        SalimCard: {
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            background: "#E0E4EB",
+            boxShadow: "9px 9px 16px #A3B1C6, -9px -9px 16px rgba(255, 255, 255, 0.25)",
+            borderRadius: "10px",
+            minWidth: "410px"
+        },
+        SalimContainer: {
+            height: "100vh"
         }
+
     }))
 ;
 
 function App() {
     const classes = useStyles()
     return (
-        <Container>
+        <Container className={classes.SalimContainer}>
             <Grid container justify="center">
                 <SalimHeader>
                     สลิ่ม
@@ -59,7 +80,8 @@ function App() {
                 <Grid container spacing={4} justify="center" alignItems="center">
                     <Grid item xs={2}></Grid>
                     <Grid item xs={7}>
-                        <TextField className={classes.root} classes={{focused: classes.inputFocus}} variant="outlined"/>
+                        <TextField className={classes.root} classes={{focused: classes.inputFocus}} variant="outlined"
+                                   fullWidth/>
                     </Grid>
                     <Grid item xs={1}>
                         <Card className={classes.SendButton}>
@@ -71,7 +93,10 @@ function App() {
                     <Grid item xs={2}></Grid>
                 </Grid>
             </form>
-            <Grid container justify="center">
+            <Grid container justify="center" style={{paddingTop: "97PX"}}>
+                <Card className={classes.SalimCard}>
+                    <SalimParam> คุณเป็นสลิ่ม ๙๙%</SalimParam>
+                </Card>
             </Grid>
         </Container>
     );
