@@ -13,7 +13,7 @@ const SalimHeader = styled.h1`
 font-family: SOV_Tejo;
 font-style: normal;
 font-weight: bold;
-font-size: 96px;
+font-size: 114px;
 line-height: 130px;
 `
 
@@ -23,6 +23,7 @@ font-style: normal;
 font-weight: bold;
 font-size: 36px;
 line-height: 49px;
+color: #7D8DA4;
 `
 const useStyles = makeStyles(theme => ({
         root: {
@@ -33,8 +34,7 @@ const useStyles = makeStyles(theme => ({
                 border: "none",
                 width: "100%",
                 height: "75px",
-
-            },
+            }
         },
         SendButton: {
             display: "flex",
@@ -43,7 +43,8 @@ const useStyles = makeStyles(theme => ({
             color: "#FF1111",
             background: "#E0E4EB",
             boxShadow: "9px 9px 16px #A3B1C6, -9px -9px 16px rgba(255, 255, 255, 0.25)",
-            borderRadius: "10px"
+            borderRadius: "10px",
+            maxWidth: "63px"
         },
         inputFocus: {
             width: '40%',
@@ -58,7 +59,7 @@ const useStyles = makeStyles(theme => ({
             background: "#E0E4EB",
             boxShadow: "9px 9px 16px #A3B1C6, -9px -9px 16px rgba(255, 255, 255, 0.25)",
             borderRadius: "10px",
-            minWidth: "410px"
+            minWidth: "320px"
         },
         SalimContainer: {
             height: "100vh"
@@ -78,19 +79,19 @@ function App() {
             </Grid>
             <form>
                 <Grid container spacing={4} justify="center" alignItems="center">
-                    <Grid item xs={2}></Grid>
-                    <Grid item xs={7}>
+                    <Grid item md={2}></Grid>
+                    <Grid item xs={12} md={7}>
                         <TextField className={classes.root} classes={{focused: classes.inputFocus}} variant="outlined"
                                    fullWidth/>
                     </Grid>
-                    <Grid item xs={1}>
+                    <Grid item xs={12} md={1} justify="center" style={{display:"flex"}}>
                         <Card className={classes.SendButton}>
                             <IconButton>
                                 <SendIcon fontSize="large" style={{color: "#FF1111"}}></SendIcon>
                             </IconButton>
                         </Card>
                     </Grid>
-                    <Grid item xs={2}></Grid>
+                    <Grid item md={2}></Grid>
                 </Grid>
             </form>
             <Grid container justify="center" style={{paddingTop: "97PX"}}>
