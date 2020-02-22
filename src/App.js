@@ -75,7 +75,7 @@ function App() {
     let formData = new FormData();
     formData.append("msg", msg);
 
-    fetch("http://52ac67f6.ngrok.io/check", { method: "post", body: formData })
+    fetch("http://7399f210.ngrok.io/check", { method: "post", body: formData })
       .then(res => res.text())
       .then(data => setData(data));
   };
